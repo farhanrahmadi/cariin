@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "621809953572",
+    "firebase_url": "https://cariin-startup.firebaseio.com",
+    "project_id": "cariin-startup",
+    "storage_bucket": "cariin-startup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621809953572:android:9fed59f2aa60c215",
+        "android_client_info": {
+          "package_name": "com.example.cariinrev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621809953572-vpchl22t3r0j3i8vv9tt7po2qenv1942.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cariinrev",
+            "certificate_hash": "f330fb45d40ca9af9b2c944fa1dc02f1d82249b6"
+          }
+        },
+        {
+          "client_id": "621809953572-sjv2cj2pug4n55859mv8s2838b9lprqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGB99Y2X0VY6g8Y5-chznEPpJdLttBWAs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621809953572-sjv2cj2pug4n55859mv8s2838b9lprqe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
