@@ -9,7 +9,7 @@ import 'package:cariin_rev/page/landing/landing.dart';
 class AfterSplash extends StatelessWidget {
 
   Widget pageRender(){
-      return Dashboard();
+      return Landing();
   }
 
   @override
