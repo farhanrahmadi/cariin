@@ -2,7 +2,7 @@ import 'package:cariin_rev/page/restaurant_detail/info.dart';
 import 'package:cariin_rev/page/restaurant_detail/list_menu.dart';
 import 'package:cariin_rev/page/restaurant_detail/reserve.dart';
 import 'package:flutter/material.dart';
-import 'package:cariin_rev/page/restaurant_detail/model/restaurant_model.dart';
+import 'package:cariin_rev/page/restaurant_detail/view_model/restaurant_model.dart';
 
 
 class RestaurantDetail extends StatefulWidget {

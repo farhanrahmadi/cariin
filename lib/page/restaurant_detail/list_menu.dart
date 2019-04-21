@@ -1,4 +1,4 @@
-import 'package:cariin_rev/page/restaurant_detail/model/restaurant_model.dart';
+import 'package:cariin_rev/page/restaurant_detail/view_model/restaurant_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';

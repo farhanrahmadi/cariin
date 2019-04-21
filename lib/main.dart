@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import './core/afterSplash.dart';
-
+import 'package:cariin_rev/core/app_route.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,27 +10,13 @@ class MyApp extends StatelessWidget {
           MediaQuery(data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true), child: child),
       title: 'Cariin',
       theme: ThemeData(
-        primaryColor: Colors.deepOrangeAccent,
+        primaryColor: Colors.orangeAccent,
         fontFamily: 'Roboto'
       ),
-      home: CariinApp(),
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: AppRouter
     );
-  }
-}
-
-class CariinApp extends StatefulWidget {
-  @override
-  _CariinAppState createState() => _CariinAppState();
-}
-
-
-class _CariinAppState extends State<CariinApp> {
-
-
-  @override
-  Widget build(BuildContext context) {
-    return new AfterSplash();
   }
 }
 

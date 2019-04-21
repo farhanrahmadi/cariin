@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 final pages = [
   new PageViewModel(
@@ -23,6 +25,8 @@ final pages = [
     'assets/icon/search.png',
   ),
 ];
+
+
 
 class Page extends StatelessWidget {
 

@@ -1,4 +1,4 @@
-class LoginData {
+class LoginData{
   String username;
   String password;
 }

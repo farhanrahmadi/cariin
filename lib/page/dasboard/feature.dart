@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MainFeature extends StatelessWidget {
   dynamic goToRestaurantDetail;
@@ -19,8 +20,8 @@ class MainFeature extends StatelessWidget {
             onTap: () => goToRestaurantDetail(),
             child: new Card(
               elevation: 5.0,
-              child: Image.asset(
-                "assets/feature/cariin.png",
+              child: SvgPicture.asset(
+                "assets/feature/cariin.svg",
                 fit: BoxFit.fitHeight,
               ),
             ),
@@ -29,8 +30,8 @@ class MainFeature extends StatelessWidget {
             onTap: () => goToRestaurantDetail(),
             child: new Card(
               elevation: 5.0,
-              child: Image.asset(
-                "assets/feature/restaurant.png",
+              child: SvgPicture.asset(
+                "assets/feature/restaurant.svg",
                 fit: BoxFit.fitHeight,
               ),
             ),
@@ -39,8 +40,8 @@ class MainFeature extends StatelessWidget {
             onTap: () => goToRestaurantDetail(),
             child: new Card(
                 elevation: 5.0,
-                child: Image.asset(
-                  "assets/feature/discount.png",
+                child: SvgPicture.asset(
+                  "assets/feature/discount.svg",
                   fit: BoxFit.fitHeight,
                 )),
           ),
@@ -48,8 +49,8 @@ class MainFeature extends StatelessWidget {
             onTap: () => goToRestaurantDetail(),
             child: new Card(
               elevation: 5.0,
-              child: Image.asset(
-                "assets/feature/cafe.png",
+              child: SvgPicture.asset(
+                "assets/feature/cafe.svg",
                 fit: BoxFit.fitHeight,
               ),
             ),
@@ -58,8 +59,8 @@ class MainFeature extends StatelessWidget {
             onTap: () => goToToday(),
             child: new Card(
               elevation: 5.0,
-              child: Image.asset(
-                "assets/feature/today.png",
+              child: SvgPicture.asset(
+                "assets/feature/today.svg",
                 fit: BoxFit.fitHeight,
               ),
             ),
@@ -68,8 +69,8 @@ class MainFeature extends StatelessWidget {
             onTap: () => goToRestaurantDetail(),
             child: new Card(
               elevation: 5.0,
-              child: Image.asset(
-                "assets/feature/deliver.png",
+              child: SvgPicture.asset(
+                "assets/feature/delivery.svg",
                 fit: BoxFit.fitHeight,
               ),
             ),

@@ -10,7 +10,7 @@ class _MainCarouselState extends State<MainCarousel> {
   @override
   Widget build(BuildContext context) {
     return new SizedBox(
-        height: 250.0,
+        height: MediaQuery.of(context).size.height * 0.35,
         width: MediaQuery.of(context).size.width,
         child: new Carousel(
           dotSize: 6.0,

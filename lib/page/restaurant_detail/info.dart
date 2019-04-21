@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:cariin_rev/page/restaurant_detail/model/restaurant_model.dart';
+import 'package:cariin_rev/page/restaurant_detail/view_model/restaurant_model.dart';
 
 class RestaurantInfo extends StatelessWidget {
 

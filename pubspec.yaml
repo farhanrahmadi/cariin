@@ -26,6 +26,10 @@ dependencies:
   barcode_scan: ^0.0.4
   flutter_masked_text: ^0.7.0
   datetime_picker_formfield: ^0.1.8
+  http: ^0.11.3+16
+  flutter_svg: ^0.12.1
+  flutter_localstorage:
+    git: git://github.com/lakexyde/flutter_localstorage.git
 
 
 dev_dependencies:

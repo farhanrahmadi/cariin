@@ -1,6 +1,6 @@
 import 'package:cariin_rev/page/list_restaurant/items.dart';
 import 'package:flutter/material.dart';
-import './model/dummy.dart';
+import './view_model/dummy.dart';
 
 
 class ListRestaurants extends StatefulWidget {
