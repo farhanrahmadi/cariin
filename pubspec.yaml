@@ -30,6 +30,7 @@ dependencies:
   flutter_svg: ^0.12.1
   flutter_localstorage:
     git: git://github.com/lakexyde/flutter_localstorage.git
+  rxdart: ^0.21.0
 
 
 dev_dependencies:

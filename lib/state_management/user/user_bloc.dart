@@ -1,36 +1,37 @@
-import 'dart:async';
+import 'package:rxdart/rxdart.dart';
+import 'package:cariin_rev/state_management/user/user_resources.dart';
+import 'package:cariin_rev/state_management/user/user_model.dart';
 
-import './user_model.dart';
-import './user_state.dart';
-import './user_event.dart';
+class UserBloc {
+  final _repository = Repository();
+  final _accountFetcher = PublishSubject<User>();
+//  final _title = BehaviorSubject<String>();
+//  final _id = BehaviorSubject<String>();
 
-class UserBloc{
-  UserEvent userEvent = new UserEvent();
-  final UserState _state = new UserState();
-  final _input = StreamController<UserEvent>();
-  final _output = StreamController<UserState>.broadcast();
+  Observable<User> get myAccount => _accountFetcher.stream;
+//  Function(String) get updateTitle => _title.sink.add;
+//  Function(String) get getId => _id.sink.add;
 
-  StreamSink<UserEvent> get inputSink => _input.sink;
-  Stream<UserState> get outputStream => _output.stream;
-
-
-  UserBloc(){
-    void onEvent(String event,UserModel payload) {
-      switch (event) {
-        case "CHANGE_USER":
-          _state.changeUser(payload);
-          break;
-        default:
-          _output.sink.add(_state);
-      }
-
-
-    }
+  fetchAllTodo() async {
+    User user = await _repository.fetchUser();
+    _accountFetcher.sink.add(user);
   }
 
-  void dispose(){
-    _input.close();
-    _output.close();
-  }
+//  addSaveTodo() {
+//    _repository.addSaveTodo(_title.value);
+//  }
+//
+//  updateTodo() {
+//    print(_id.value);
+//    _repository.updateSaveTodo(_id.value);
+//  }
 
+
+  dispose(){
+//    _title.close();
+//    _id.close();
+    _accountFetcher.close();
+  }
 }
+
+final bloc = UserBloc();

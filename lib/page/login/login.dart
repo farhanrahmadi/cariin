@@ -1,14 +1,10 @@
 import 'dart:convert';
 import 'package:cariin_rev/core/static_data.dart';
-import 'package:cariin_rev/state_management/user/user_bloc.dart';
-import 'package:cariin_rev/state_management/user/user_bloc_provider.dart';
-import 'package:cariin_rev/state_management/user/user_event.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cariin_rev/page/login/form_login.dart';
 import 'package:flutter_localstorage/flutter_localstorage.dart';
-import 'package:cariin_rev/state_management/user/user_model.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -16,7 +12,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final UserBloc _bloc = new UserBloc();
   Widget mainLogo = AnimatedOpacity(
     opacity: 1,
     duration: Duration(seconds: 1),
@@ -81,7 +76,7 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              UserBlocProvider(bloc: _bloc, child: _authGoogle()),
+               _authGoogle(),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
@@ -104,7 +99,7 @@ class __authGoogleState extends State<_authGoogle> {
   LocalStorage localStorage = new LocalStorage();
   StaticData _staticData = new StaticData();
 
-  void getData(res, bloc) async {
+  void getData(res) async {
     final url = '${_staticData.MainLink}/mobile/auth/google';
     var body = json.encode({'id_token': res});
     var request = await http.post(url, body: body, headers: {
@@ -125,17 +120,12 @@ class __authGoogleState extends State<_authGoogle> {
                 ],
               ));
     }
-    bloc.inputSink.add(UserEvent(
-        event: "CHANGE_USER",
-        payload: UserModel(name: response["name"], image: response["image"])));
     localStorage.setItem("apiKey", response["token"]);
     Navigator.pushNamed(context, '/dashboard');
   }
 
   @override
   Widget build(BuildContext context) {
-    final UserEvent event = new UserEvent();
-    final UserBloc bloc = UserBlocProvider.of(context).bloc;
     GoogleSignIn _googleSignIn = GoogleSignIn(
       scopes: [
         'email',
@@ -146,7 +136,7 @@ class __authGoogleState extends State<_authGoogle> {
       try {
         await _googleSignIn.signIn().then((result) {
           result.authentication.then((googleKey) {
-            getData(googleKey.idToken, bloc);
+            getData(googleKey.idToken);
           }).catchError((err) {
             print('inner error');
           });
