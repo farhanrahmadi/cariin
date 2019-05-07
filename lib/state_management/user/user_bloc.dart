@@ -12,9 +12,11 @@ class UserBloc {
 //  Function(String) get updateTitle => _title.sink.add;
 //  Function(String) get getId => _id.sink.add;
 
-  fetchAllTodo() async {
+  fetchUser() async {
     User user = await _repository.fetchUser();
+//    print(user.name);
     _accountFetcher.sink.add(user);
+    print(_accountFetcher.stream);
   }
 
 //  addSaveTodo() {

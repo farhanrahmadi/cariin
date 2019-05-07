@@ -160,8 +160,35 @@ class AccountHeader extends StatelessWidget {
     return StreamBuilder(
         stream: bloc.myAccount,
         builder: (context, AsyncSnapshot<User> snapshot) {
-          print(snapshot);
-          return sideDrawerHeader(snapshot);
+          if(!snapshot.hasData){
+            return Container(child: Center(child: Text("kosong"),),);
+          }
+          print(snapshot.data);
+          return UserAccountsDrawerHeader(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(
+                        "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+                    fit: BoxFit.fill)),
+            accountName: Text(
+              snapshot.data.name,
+              style: TextStyle(color: Colors.white),
+            ),
+            accountEmail:
+            Text("example@email.com", style: TextStyle(color: Colors.white)),
+            currentAccountPicture: CircleAvatar(
+              child: new Container(
+                  width: 100.0,
+                  height: 100.0,
+                  decoration: new BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 2.0),
+                      shape: BoxShape.circle,
+                      image: new DecorationImage(
+                          fit: BoxFit.fill,
+                          image: new NetworkImage(
+                              "https://lh5.googleusercontent.com/-f-S3nhKW0qk/AAAAAAAAAAI/AAAAAAAAAPc/HBhdWonjW7Q/s96-c/photo.jpg")))),
+            ),
+          );
         });
   }
 }

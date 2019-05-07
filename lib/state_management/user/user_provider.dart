@@ -13,15 +13,15 @@ class UserApiProvider {
 
 
   Future<User> fetchUser() async {
-    String url = '${_staticData.MainLink}/mobile/auth/my_acoount';
-    var body = json.encode({'id_token': LS.getItem("apiKey")});
-    var response = await http.post(url, body: body, headers: {
+    String url = '${_staticData.MainLink}/mobile/auth/my_account';
+    var request = await http.get(url, headers: {
       'Authorization': LS.getItem("apiKey"),
       'Content-type': 'application/json',
       'Accept': 'application/json',
     });
-    if (response.statusCode == 200) {
-      return compute(userFromJson, response.body);
+    var res = jsonDecode(request.body);
+    if (res["error"] == null) {
+      return compute(userFromJson, request.body);
     } else {
       throw Exception('Failed to Load');
     }

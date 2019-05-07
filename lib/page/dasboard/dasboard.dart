@@ -8,6 +8,7 @@ import 'package:cariin_rev/page/dasboard/top.dart';
 import 'package:cariin_rev/page/dasboard/feature.dart';
 import 'package:cariin_rev/page/list_restaurant/list_restaurant.dart';
 import 'package:cariin_rev/page/today/today.dart';
+import 'package:cariin_rev/state_management/user/user_bloc.dart';
 
 
 
@@ -21,6 +22,12 @@ class _DashboardState extends State<Dashboard> {
   int navBarIndex = 0;
   String barcode = "";
   GlobalKey<ScaffoldState> _key = new GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    bloc.fetchUser();
+    super.initState();
+  }
 
   handleDrawer() {
     _key.currentState.openDrawer();
@@ -75,7 +82,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(centerTitle: true,title: Text("Cariin",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),),
       resizeToAvoidBottomPadding: false,
         drawer: new Drawer(
           child:SideDrawer()
